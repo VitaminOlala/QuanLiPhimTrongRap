@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View.phongchieu;
+package View.voucher;
 
-import Controller.phim.ThongTin;
 import Controller.phongchieu.ThongTinPhongChieu;
+import Controller.voucher.ThongTinVoucher;
 import Model.phim.ThucHienBusiness;
 import Model.phongchieu.PhongChieuBusiness;
+import Model.voucher.VoucherBusiness;
 import static View.phim.HeThong.hienThiDanhSachPhim;
 import View.phim.themMoi;
 import java.util.List;
@@ -19,11 +20,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Acer
  */
-public class HeThongPhongChieu extends javax.swing.JFrame {
+public class HeThongVoucher extends javax.swing.JFrame {
 
-    public HeThongPhongChieu() {
+    /**
+     * Creates new form HeThongVoucher
+     */
+    public HeThongVoucher() {
         initComponents();
-
     }
 
     /**
@@ -54,7 +57,7 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Tìm kiếm theo mã và tình trạng: ");
+        jLabel1.setText("Tìm kiếm theo mã và tên khách hàng: ");
 
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,24 +71,27 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel1)
-                .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(jButton1)))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addComponent(jButton1)
-                .addGap(24, 24, 24))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -101,7 +107,7 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton2.setText("Thêm");
+        jButton2.setText("Thêm mới");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -129,50 +135,54 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(257, 257, 257)
+                .addGap(321, 321, 321)
                 .addComponent(jButton2)
-                .addGap(38, 38, 38)
+                .addGap(72, 72, 72)
                 .addComponent(jButton3)
-                .addGap(29, 29, 29)
+                .addGap(44, 44, 44)
                 .addComponent(jButton4)
-                .addGap(18, 18, 18)
+                .addGap(48, 48, 48)
                 .addComponent(jButton5)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(135, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(51, 51, 51))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(59, 59, 59)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -180,118 +190,124 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        themMoiPc frmThemMoi = new themMoiPc();
-
-        frmThemMoi.setVisible(rootPaneCheckingEnabled);
+        themMoiVoucher frmThemMoi = new themMoiVoucher(); 
+        
+        frmThemMoi.setVisible(rootPaneCheckingEnabled);        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        String maPHIM = "";
-        int dongChon = 0;
-        themMoiPc frmSua = new themMoiPc();
-
+        String maThe="";
+        int dongChon=0;
+        themMoiVoucher frmSua= new themMoiVoucher();
+        
         //Lấy chỉ số dòng chọn trên Main Table
-        dongChon = jTable1.getSelectedRow();
-
-        //Lấy thông tin mã phòng chiếu của dòng chọn
-        maPHIM = "" + jTable1.getValueAt(dongChon, 0);
-
-        //Truyền mã phòng chiếulên giao diện sửa
-        frmSua.setMaBoPhim(maPHIM);
+        dongChon= jTable1.getSelectedRow();
+        
+        //Lấy thông tin mã phim của dòng chọn
+        maThe = ""+jTable1.getValueAt(dongChon, 0);
+        
+        //Truyền mã phim lên giao diện sửa
+        frmSua.setMaBoPhim(maThe);
         //Hiện thị thông tin
-        frmSua.setVisible(rootPaneCheckingEnabled);
+        frmSua.setVisible(rootPaneCheckingEnabled);        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         int ketQua = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn xóa không?");
-
-        if (ketQua == JOptionPane.YES_OPTION) {
-            String maPHIM = "";
+        
+        if(ketQua == JOptionPane.YES_OPTION){
+            String maThe = "";
             int dongChon = 0;
-
+            
             dongChon = jTable1.getSelectedRow();
-
-            maPHIM = "" + jTable1.getValueAt(dongChon, 0);
-
+            
+            maThe= "" + jTable1.getValueAt(dongChon, 0);
+            
             //Khai báo đối tượng
-            PhongChieuBusiness thuchien = new PhongChieuBusiness();
-
+            VoucherBusiness thuchien = new VoucherBusiness();
+            
             //Thực hiện công việc xóa
-            boolean XoaP = thuchien.xoaPhongChieu(maPHIM);
-
-            if (XoaP) {
-
+            boolean XoaP = thuchien.xoaVoucher(maThe);
+            
+            if(XoaP){
+                
                 //ReLoad lại danh sách
-                hienThiDanhSachPhongChieu();
-
+                hienThiDanhSachVoucher();
+                
             }
-        }
+        }         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
 //        Khai báo biến
-        PhongChieuBusiness thuchienpc = new PhongChieuBusiness();
+        VoucherBusiness thuchienpc = new VoucherBusiness();
         String timTen = "";
 
         timTen = jTextField1.getText();
 
         //Lấy danh sách phim từ db
-        List<ThongTinPhongChieu> lstPc = thuchienpc.timKiemPhongChieu(timTen);        
+        List<ThongTinVoucher> lstVoucher = thuchienpc.timKiemVoucher(timTen);        
         //Khai báo 1 đối tượng dderr đưa vào jTable\
-        String colTieuDe[] = new String[]{"Mã Phòng Chiếu", "Số chỗ", "Máy chiếu", "Âm thanh", "Diện tích", "Tình trạng"};    
+
+        //Khai báo các cột tiêu đề trên jTable
+        String colTieuDe[] = new String[]{"Mã thẻ", "Loại thẻ", "Tên khách hàng", "Giới tính", "Số CMT", "Số điện thoại", "Địa chỉ", "Số lần tích lũy", "Giảm giá"};
+
+        //Khai báo 1 đối tượng dderr đưa vào jTable
         DefaultTableModel model = new DefaultTableModel(colTieuDe, 0);
         model.setRowCount(0);
-        Object[] row = {"MaPhongChieu", "SoCho", "MayChieu", "AmThanh", "DienTich", "TinhTrang"};
-        for (ThongTinPhongChieu ttt : lstPc) {
-            row = new Object[6];
-            row[0] = ttt.getMaPhongChieu();
-            row[1] = ttt.getSoCho();
-            row[2] = ttt.getMayChieu();
-            row[3] = ttt.getAmThanh();
-            row[4] = ttt.getDienTich();
-            row[5] = ttt.getTinhTrang();
-
+        Object[] row = {"MaThe", "LoaiThe", "TenKhachHang", "GioiTinh", "SoCMT", "SDT", "DiaChi", "SoLanTichLuy", "Voucher"};
+        for (ThongTinVoucher ttt : lstVoucher) {
+            row = new Object[9];
+            row[0] = ttt.getMaThe();
+            row[1] = ttt.getLoaiThe();
+            row[2] = ttt.getTenKhachHang();
+            row[3] = ttt.getGioiTinh();
+            row[4] = ttt.getSoCMT();
+            row[5] = ttt.getSDT();
+            row[6] = ttt.getDiaChi();
+            row[7] = ttt.getSoLanTichLuy();
+            row[8] = ttt.getVoucher();
             model.addRow(row);
 
         }
         //Thêm vào mục model
         jTable1.setModel(model);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        hienThiDanhSachPhongChieu();
+        hienThiDanhSachVoucher();
     }//GEN-LAST:event_formWindowOpened
-    public static void hienThiDanhSachPhongChieu() {
+    public static void hienThiDanhSachVoucher() {
         //Khai báo 1 đối tượng thuộc lớp ThucHienBusiness
-        PhongChieuBusiness thuchienpc = new PhongChieuBusiness();
-        List<ThongTinPhongChieu> l = thuchienpc.layDanhSach();
+        VoucherBusiness thuchien = new VoucherBusiness();
+        List<ThongTinVoucher> l = thuchien.layDanhSach();
 
         //Khai báo biến
-//        String timTen = "";
-//
-//        timTen = jTextField1.getText();
-//
-//        //Lấy danh sách phim từ db
-//        List<ThongTinPhongChieu> lstPc = thuchienpc.timKiemPhongChieu(timTen);
+
 
         //Khai báo các cột tiêu đề trên jTable
-        String colTieuDe[] = new String[]{"Mã Phòng Chiếu", "Số chỗ", "Máy chiếu", "Âm thanh", "Diện tích", "Tình trạng"};
+        String colTieuDe[] = new String[]{"Mã thẻ", "Loại thẻ", "Tên khách hàng", "Giới tính", "Số CMT", "Số điện thoại", "Địa chỉ", "Số lần tích lũy", "Giảm giá"};
 
         //Khai báo 1 đối tượng dderr đưa vào jTable
         DefaultTableModel model = new DefaultTableModel(colTieuDe, 0);
         model.setRowCount(0);
-        Object[] row = {"MaPhongChieu", "SoCho", "MayChieu", "AmThanh", "DienTich", "TinhTrang"};
-        for (ThongTinPhongChieu ttt : l) {
-            row = new Object[6];
-            row[0] = ttt.getMaPhongChieu();
-            row[1] = ttt.getSoCho();
-            row[2] = ttt.getMayChieu();
-            row[3] = ttt.getAmThanh();
-            row[4] = ttt.getDienTich();
-            row[5] = ttt.getTinhTrang();
+        Object[] row = {"MaThe", "LoaiThe", "TenKhachHang", "GioiTinh", "SoCMT", "SDT", "DiaChi", "SoLanTichLuy", "Voucher"};
+        for (ThongTinVoucher ttt : l) {
+            row = new Object[9];
+            row[0] = ttt.getMaThe();
+            row[1] = ttt.getLoaiThe();
+            row[2] = ttt.getTenKhachHang();
+            row[3] = ttt.getGioiTinh();
+            row[4] = ttt.getSoCMT();
+            row[5] = ttt.getSDT();
+            row[6] = ttt.getDiaChi();
+            row[7] = ttt.getSoLanTichLuy();
+            row[8] = ttt.getVoucher();
 
             model.addRow(row);
 
@@ -300,7 +316,6 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
         jTable1.setModel(model);
 
     }
-
     /**
      * @param args the command line arguments
      */
@@ -318,22 +333,20 @@ public class HeThongPhongChieu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HeThongPhongChieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HeThongVoucher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HeThongPhongChieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HeThongVoucher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HeThongPhongChieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HeThongVoucher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HeThongPhongChieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HeThongVoucher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HeThongPhongChieu().setVisible(true);
-
-//                hienThiDanhSachPhongChieu();
+                new HeThongVoucher().setVisible(true);
             }
         });
     }
