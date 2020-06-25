@@ -5,8 +5,9 @@
  */
 package Model.nhanvien;
 
-import Controller.nhanvien.DataProvider;
+
 import Controller.nhanvien.ThongTinNhanVien;
+import Controller.phongchieu.DataProvider;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,7 +55,7 @@ public class NhanVienBusiness {
                 objPc.setThuongTru(rs.getString("ThuongTru"));
 
                 //Them vào danh sách
-                lstPc.add(objPc);
+                lstNv.add(objPc);
             }
 
         } catch (SQLException ex) {
@@ -70,7 +71,7 @@ public class NhanVienBusiness {
             }
         }
 
-        return lstPc;
+        return lstNv;
 
     }
 
@@ -167,14 +168,14 @@ public class NhanVienBusiness {
 
             //Gán giá trị cho các tham số (phải cùng thứ tự câu lệnh strUpdate)
            
-            comm.setString(1, objPc.getTenNhanVien());
-            comm.setString(2, objPc.getNgaySinh());
-            comm.setString(3, objPc.getGioiTinh());
-            comm.setString(4, objPc.getSoCMT());
-            comm.setString(5, objPc.getChucVu());
-            comm.setString(6, objPc.getQueQuan());
-            comm.setString(7, objPc.getThuongTru());
-            comm.setString(8, objPc.getMaNhanVien());
+            comm.setString(1, objNv.getTenNhanVien());
+            comm.setString(2, objNv.getNgaySinh());
+            comm.setString(3, objNv.getGioiTinh());
+            comm.setString(4, objNv.getSoCMT());
+            comm.setString(5, objNv.getChucVu());
+            comm.setString(6, objNv.getQueQuan());
+            comm.setString(7, objNv.getThuongTru());
+            comm.setString(8, objNv.getMaNhanVien());
 
             //thực hiện công việc'
             return comm.executeUpdate() > 0;
@@ -216,20 +217,20 @@ public class NhanVienBusiness {
             ResultSet rs = comm.executeQuery(strSQL);
 
             //Khai báo 1 dối tượng
-            ThongTinNhanVien objPc = null;
+            ThongTinNhanVien objNv = null;
 
             //Đọc từng thông tin
             while (rs.next()) {
-                objPc = new ThongTinNhanVien();
-                objPc.setMaNhanVien(rs.getString("MaNhanVien"));
-                objPc.setTenNhanVien(rs.getString("TenNhanVien"));
-                objPc.setNgaySinh(rs.getString("NgaySinh"));
-                objPc.setGioiTinh(rs.getString("GioiTinh"));
-                objPc.setSoCMT(rs.getString("SoCMT"));
-                objPc.setChucVu(rs.getString("ChucVu"));
-                objPc.setQueQuan(rs.getString("QueQuan"));
-                objPc.setThuongTru(rs.getString("ThuongTru"));
-                lstPc.add(objPc);
+                objNv = new ThongTinNhanVien();
+                objNv.setMaNhanVien(rs.getString("MaNhanVien"));
+                objNv.setTenNhanVien(rs.getString("TenNhanVien"));
+                objNv.setNgaySinh(rs.getString("NgaySinh"));
+                objNv.setGioiTinh(rs.getString("GioiTinh"));
+                objNv.setSoCMT(rs.getString("SoCMT"));
+                objNv.setChucVu(rs.getString("ChucVu"));
+                objNv.setQueQuan(rs.getString("QueQuan"));
+                objNv.setThuongTru(rs.getString("ThuongTru"));
+                lstNv.add(objNv);
             }
         } catch (SQLException ex) {
             System.out.println("Có lỗi xảy ra trong quá trình làm việc với mysql." + "Chi tiết: " + ex.getMessage());
@@ -244,7 +245,7 @@ public class NhanVienBusiness {
             }
 
         }
-        return lstPc;
+        return lstNv;
     }
 
     public boolean xoaNhanVien(String maNv) {
@@ -276,15 +277,15 @@ public class NhanVienBusiness {
         List<ThongTinNhanVien> lstNv = new ArrayList<>();
         Connection conn = null;
         try {
-            conn = DataProvider.KetNoi();
+            conn = DataProvider.getConnection();
             String strSQL = "SELECT * FROM `nhanvien` ORDER BY `TenNhanVien`";
 
             Statement comm = conn.createStatement();
             ResultSet rs = comm.executeQuery(strSQL);
-            NhanVienBusiness objNv = null;
+            ThongTinNhanVien objNv = null;
 
             while(rs.next()) {
-                objNv = new NhanVienBusiness();
+                objNv = new ThongTinNhanVien();
                 objNv.setMaNhanVien(rs.getString("MaNhanVien"));
                 objNv.setTenNhanVien(rs.getString("TenNhanVien"));
                 objNv.setNgaySinh(rs.getString("NgaySinh"));
