@@ -274,6 +274,8 @@ public class ThemMoiVe extends javax.swing.JFrame {
         // TODO add your handling code here:
         ThongTinVe objVe = new ThongTinVe();
         //ghi thông tin 
+        String maVe = jTextField2.getText();
+        
         objVe.setMaVe(jTextField2.getText());
         objVe.setMaPhim(jTextField7.getText());
         objVe.setRunTime(jTextField3.getText());
@@ -374,7 +376,7 @@ public class ThemMoiVe extends javax.swing.JFrame {
     private void hienThiChiTietVe(){
         //Khai báo 1 đối tuong để sử dụng thông tin của lớp đấy
         VeBusiness thuchien = new VeBusiness();
-        //Lấy thông tin chỉ tiết của phim
+        //Lấy thông tin chỉ tiết của vé
         ThongTinVe objVe =  thuchien.layChiTiet(maBoPhim);
         jTextField2.setText(maBoPhim);
         jTextField2.setEnabled(rootPaneCheckingEnabled);

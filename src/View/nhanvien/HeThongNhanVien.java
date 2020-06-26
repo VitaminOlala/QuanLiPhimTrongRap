@@ -48,6 +48,7 @@ public class HeThongNhanVien extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -126,12 +127,21 @@ public class HeThongNhanVien extends javax.swing.JFrame {
 
         jButton5.setText("Đóng");
 
+        jButton6.setText("jButton6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addGap(20, 20, 20)
+                .addComponent(jButton6)
+                .addGap(35, 35, 35)
                 .addComponent(jButton2)
                 .addGap(48, 48, 48)
                 .addComponent(jButton3)
@@ -149,7 +159,8 @@ public class HeThongNhanVien extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
                 .addGap(32, 32, 32))
         );
 
@@ -269,6 +280,38 @@ public class HeThongNhanVien extends javax.swing.JFrame {
         //Thêm vào mục model
         jTable1.setModel(model);        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         NhanVienBusiness thuchienpc = new NhanVienBusiness();
+        String timTen = "";
+
+
+
+        //Lấy danh sách phim từ db
+        List<ThongTinNhanVien> lstPc = thuchienpc.sapXepNhanVien();        
+        //Khai báo 1 đối tượng dderr đưa vào jTable\
+        String colTieuDe[] = new String[]{"Mã nhân viên", "Tên nhân viên", "Ngày sinh", "Giới tính", "Số CMT", "Chức vụ", "Quê quán", "Thường trú"};    
+        DefaultTableModel model = new DefaultTableModel(colTieuDe, 0);
+        model.setRowCount(0);
+        Object[] row = {"MaNhanVien", "TenNhanVien", "NgaySinh", "GioiTinh", "SoCMT", "ChucVu", "QueQuan", "ThuongTru"};
+        for (ThongTinNhanVien ttt : lstPc) {
+            row = new Object[8];
+            row[0] = ttt.getMaNhanVien();
+            row[1] = ttt.getTenNhanVien();
+            row[2] = ttt.getNgaySinh();
+            row[3] = ttt.getGioiTinh();
+            row[4] = ttt.getSoCMT();
+            row[5] = ttt.getChucVu();
+            row[6] = ttt.getQueQuan();
+            row[7] = ttt.getThuongTru();
+
+            model.addRow(row);
+
+        }
+        //Thêm vào mục model
+        jTable1.setModel(model);        
+    }//GEN-LAST:event_jButton6ActionPerformed
     public static void hienThiDanhSachNhanVien() {
         //Khai báo 1 đối tượng thuộc lớp ThucHienBusiness
         NhanVienBusiness thuchienpc = new NhanVienBusiness();
@@ -339,6 +382,7 @@ public class HeThongNhanVien extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
