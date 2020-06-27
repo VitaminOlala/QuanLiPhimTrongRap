@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Controller.phim.DataProvider;
-import Controller.phim.DoTuoi;
-import Controller.ve.Ghe;
+
+
+import Model.phim.DataProvider;
 
 /**
  *

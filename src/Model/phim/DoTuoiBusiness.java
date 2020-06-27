@@ -5,8 +5,7 @@
  */
 package Model.phim;
 
-import Controller.phim.DoTuoi;
-import Controller.phim.DataProvider;
+
 import quanlirapphim.*;
 import java.sql.Connection;
 import java.sql.ResultSet;

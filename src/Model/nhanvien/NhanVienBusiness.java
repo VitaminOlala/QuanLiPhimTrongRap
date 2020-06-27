@@ -6,8 +6,8 @@
 package Model.nhanvien;
 
 
-import Controller.nhanvien.ThongTinNhanVien;
-import Controller.phongchieu.DataProvider;
+
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -294,6 +294,8 @@ public class NhanVienBusiness {
                 objNv.setChucVu(rs.getString("ChucVu"));
                 objNv.setQueQuan(rs.getString("QueQuan"));
                 objNv.setThuongTru(rs.getString("ThuongTru"));
+                
+                lstNv.add(objNv);
             }
         } catch (SQLException ex) {
             System.out.println("Có lỗi xảy ra trong quá trình làm việc với mysql." + "Chi tiết: " + ex.getMessage());

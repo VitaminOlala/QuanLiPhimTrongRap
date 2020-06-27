@@ -5,8 +5,7 @@
  */
 package Model.phongchieu;
 
-import Controller.phongchieu.DataProvider;
-import Controller.phongchieu.ThongTinPhongChieu;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

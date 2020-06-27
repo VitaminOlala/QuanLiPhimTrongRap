@@ -5,9 +5,9 @@
  */
 package Model.thongke;
 
-import Controller.phim.DataProvider;
-import Controller.thongke.ThongTinThongKe;
-import Controller.ve.ThongTinVe;
+
+
+import Model.phim.DataProvider;
 import Model.ve.VeBusiness;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

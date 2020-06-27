@@ -5,7 +5,8 @@
  */
 package Model.ve;
 
-import Controller.ve.ThongTinVe;
+
+import Model.phim.DataProvider;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Controller.phim.DataProvider;
+
 
 
 /**
@@ -53,7 +54,7 @@ public class VeBusiness {
                 lstVe.add(objVe);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(VeBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VeBusiness.class.getName()).log(Level.SEVERE, null, ex); 
         }
         finally{
             if(conn != null){
@@ -90,8 +91,8 @@ public class VeBusiness {
 
                 objVe.setTime(rs.getString("Time"));
                 objVe.setRunTime(rs.getString("RunTime"));
-                objVe.setGiaVe(rs.getString("GiaVe"));                
                 objVe.setVoucher(rs.getString("Voucher"));
+                objVe.setGiaVe(rs.getString("GiaVe"));                
                 objVe.setMaPhongChieu(rs.getString("MaPhongChieu"));                
                 objVe.setMaNhanVien(rs.getString("MaNhanVien"));
                 objVe.setMaGhe(rs.getString("MaGhe"));

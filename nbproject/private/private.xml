@@ -3,14 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/Model/phongchieu/PhongChieuBusiness.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/View/ve/ThemMoiVe.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/View/phongchieu/HeThongPhongChieu.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/View/ve/HeThongVe.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/Model/ve/VeBusiness.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/Controller/thongke/ThongTinThongKe.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/Controller/ve/ThongTinVe.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiRapPhim_1/src/View/thongke/HeThongBaoCao.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/Model/ve/VeBusiness.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/ve/ThemMoiVe.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/phim/frmDangNhap.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/ve/HeThongVe.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/Controller/nhanvien/ThongTinNhanVien.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/Controller/ve/ThongTinVe.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/nhanvien/HeThongNhanVien.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/Model/nhanvien/NhanVienBusiness.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/nhanvien/themMoiNhanVien.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/phim/HeThong.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/QuanLiPhimTrongRap/src/View/phim/frmCuaSoChinh.java</file>
         </group>
     </open-files>
 </project-private>

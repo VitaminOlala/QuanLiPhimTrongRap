@@ -5,8 +5,7 @@
  */
 package Model.phim;
 
-import Controller.phim.DataProvider;
-import Controller.phim.NguoiDung;
+
 import quanlirapphim.*;
 import Model.phim.ThucHienBusiness;
 import java.sql.Connection;

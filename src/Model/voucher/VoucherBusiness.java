@@ -5,9 +5,9 @@
  */
 package Model.voucher;
 
-import Controller.phim.DataProvider;
-import Controller.thongke.ThongTinThongKe;
-import Controller.voucher.ThongTinVoucher;
+
+
+import Model.phim.DataProvider;
 import Model.thongke.ThongKeBusiness;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

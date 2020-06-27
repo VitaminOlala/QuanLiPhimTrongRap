@@ -5,8 +5,7 @@
  */
 package Model.phim;
 
-import Controller.phim.DataProvider;
-import Controller.phim.ThongTin;
+
 import quanlirapphim.*;
 import java.sql.Connection;
 import java.sql.Date;
